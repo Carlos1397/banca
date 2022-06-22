@@ -2,6 +2,7 @@ package com.banking.banca.api;
 
 
 import com.banking.banca.exception.MyException;
+import com.banking.banca.model.document.Card;
 import com.banking.banca.model.document.Movement;
 import com.banking.banca.model.service.MovementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,11 @@ public class MovementController {
     }
 
     @GetMapping()
-    public Flux<Movement> getAllClients() {
+    public Flux<Movement> getAllMovement() {
         return movementService.getAll();
+    }
+    @GetMapping("/{id}")
+    public Mono<Movement> getMovement(@PathVariable String id) {
+        return movementService.findById(id);
     }
 }

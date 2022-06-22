@@ -1,6 +1,7 @@
 package com.banking.banca.api;
 
 import com.banking.banca.model.document.Client;
+import com.banking.banca.model.document.Movement;
 import com.banking.banca.model.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,16 @@ public class ClientController {
     public Mono<List<Client>> getAllClients() {
         return clientService.getAll();
     }
-
-
+    @GetMapping("/{id}")
+    public Mono<Client> getClient(@PathVariable String id) {
+        return clientService.findById(id);
+    }
+    @PutMapping()
+    public Mono<Client> updateClient(@RequestBody Client client) {
+        return  clientService.update(client);
+    }
+    @DeleteMapping("/{id}")
+    public Mono<Void> deleteClient(@PathVariable String id) {
+        return  clientService.deleteById(id);
+    }
 }

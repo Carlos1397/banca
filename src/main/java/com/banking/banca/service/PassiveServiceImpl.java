@@ -29,12 +29,12 @@ public class PassiveServiceImpl implements PassiveService {
 
     @Override
     public Mono<Passive> update(Passive passive) {
-        return null;
+        return passiveRepository.save(passive) ;
     }
 
     @Override
     public Mono<Void> deleteById(String id) {
-        return null;
+        return passiveRepository.deleteById(id);
     }
 
     @Override

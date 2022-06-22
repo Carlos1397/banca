@@ -29,7 +29,12 @@ public class MovementServiceImpl implements MovementService {
     }
 
     @Override
+    public Mono<Movement> findById(String id) {
+        return movementRepository.findById(id);
+    }
+
+    @Override
     public Mono<Void> delete(String id) {
-        return null;
+        return movementRepository.deleteById(id);
     }
 }

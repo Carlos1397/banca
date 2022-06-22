@@ -40,6 +40,36 @@
 					"response": []
 				},
 				{
+					"name": "Update Client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": \"62b23c6a222ca87734cf8f45\",\r\n   \"name\": \"Pedro G.\",\r\n   \"nroDocument\": \"15378851\",\r\n   \"typeClient\": \"STAFF\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "getAll Clients",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -62,6 +92,54 @@
 								"api",
 								"v1",
 								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients/62b23c6a222ca87734cf8f45",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients",
+								"62b23c6a222ca87734cf8f45"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients/62b23cdb222ca87734cf8f46",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients",
+								"62b23cdb222ca87734cf8f46"
 							]
 						}
 					},
@@ -129,7 +207,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/passives/62b268c1f7978068f8dc05e8",
+							"raw": "http://localhost:8080/api/v1/passives/62b29a33e002da75a0802f4b",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -139,7 +217,37 @@
 								"api",
 								"v1",
 								"passives",
-								"62b268c1f7978068f8dc05e8"
+								"62b29a33e002da75a0802f4b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Passive",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"id\": \"62b29a33e002da75a0802f4b\",\r\n    \"typeAccount\": \"SAVINGS\",\r\n    \"commission\": 12.0,\r\n    \"limitMov\": 7,\r\n    \"balance\": 200.0,\r\n    \"createdDate\": \"2022-06-22T04:27:31.731+00:00\",\r\n    \"client\": \"62b23c6a222ca87734cf8f45\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/passives",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"passives"
 							]
 						}
 					},
@@ -157,7 +265,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"amount\": 25,\r\n    \"typeOperation\": \"DEPOSIT\",\r\n    \"codPassive\": \"62b2c1e5c575ee2d77a3ceeb\"\r\n}",
+							"raw": "{\r\n    \"amount\": 25,\r\n    \"typeOperation\": \"DEPOSIT\",\r\n    \"codPassive\": \"62b29a33e002da75a0802f4b\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -181,7 +289,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "getAll Movement",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -196,6 +304,28 @@
 								"api",
 								"v1",
 								"movements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movements/62b2bc7ea571b95e4b933878",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movements",
+								"62b2bc7ea571b95e4b933878"
 							]
 						}
 					},
@@ -243,7 +373,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nroCard\":\"3123-268-2782\",\r\n  \"typeCard\":\"CREDIT\",\r\n  \"approvedLine\": 1000,\r\n  \"availableBalance\" :1000,\r\n  \"usage\":200\r\n}",
+							"raw": "{\r\n        \"nroCard\": \"3123-268-2782\",\r\n        \"approvedLine\": 5000.0,\r\n        \"availableBalance\": 1000.0,\r\n        \"typeCard\": \"CREDIT\",\r\n        \"usage\": 200.0,\r\n        \"createdDate\": \"2022-06-22T17:32:34.817+00:00\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -251,7 +381,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/cards",
+							"raw": "http://localhost:8080/api/v1/cards/62b352328cea9c1f1f1bcc75",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -260,7 +390,8 @@
 							"path": [
 								"api",
 								"v1",
-								"cards"
+								"cards",
+								"62b352328cea9c1f1f1bcc75"
 							]
 						}
 					},

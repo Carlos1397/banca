@@ -1,6 +1,7 @@
 package com.banking.banca.api;
 
 import com.banking.banca.exception.MyException;
+import com.banking.banca.model.document.Client;
 import com.banking.banca.model.document.Passive;
 import com.banking.banca.model.service.PassiveService;
 import lombok.extern.slf4j.Slf4j;
@@ -30,13 +31,22 @@ public class PassiveController {
     }
 
     @GetMapping()
-    public Flux<Passive> getAllClients() {
+    public Flux<Passive> getAllPassive() {
         return passiveService.getAll();
     }
 
 
     @GetMapping("/{id}")
-    public Mono<Passive> getClientID(@PathVariable String id) {
+    public Mono<Passive> getPassiveID(@PathVariable String id) {
      return  passiveService.findById(id);
+    }
+
+    @PutMapping()
+    public Mono<Passive> updatePassive(@RequestBody Passive passive) {
+        return passiveService.update(passive);
+    }
+    @DeleteMapping("/{id}")
+    public Mono<Void> deletePassive(@PathVariable String id) {
+        return  passiveService.deleteById(id);
     }
 }

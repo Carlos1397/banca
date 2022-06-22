@@ -27,16 +27,16 @@ public class CardController {
     }
 
     @GetMapping("/{id}")
-    public Mono<Card> getAsset(@PathVariable String id) {
+    public Mono<Card> getCard(@PathVariable String id) {
         return  cardService.findById(id);
     }
 
     @DeleteMapping("/{id}")
-    public Mono<Void> deleteAsset(@PathVariable String id) {
+    public Mono<Void> deleteCard(@PathVariable String id) {
        return  cardService.delete(id);
     }
     @PutMapping("/{id}")
-    public Mono<Card> updateAsset(@PathVariable String id, @RequestBody Card card) {
+    public Mono<Card> updateCard(@PathVariable String id, @RequestBody Card card) {
         return  cardService.update(id,card);
     }
 
