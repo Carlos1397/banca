@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          default: main
+          uri: https://github.com/Carlos1397/banca
+          search-paths: banca
+  application:
+    name: banca
