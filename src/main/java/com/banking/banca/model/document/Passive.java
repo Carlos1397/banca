@@ -32,4 +32,8 @@ public class Passive {
 
     public String client;
 
+    boolean isTypeAccountExiste(){
+        return !this.typeAccount.equals(null);
+    }
+
 }

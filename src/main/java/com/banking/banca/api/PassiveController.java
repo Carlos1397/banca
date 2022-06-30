@@ -22,12 +22,13 @@ public class PassiveController {
 
     @PostMapping()
     public Mono<Passive> createPassive(@RequestBody Passive passive) {
-        log.info(passive.getTypeAccount().getName());
+        return passiveService.save(passive);
+        /*log.info(passive.getTypeAccount().getName());
         if(passive.getClient()==null ||passive.getClient().isEmpty()){
             throw new MyException(HttpStatus.BAD_REQUEST,"error in idClient");
         }else {
             return passiveService.save(passive);
-        }
+        }*/
     }
 
     @GetMapping()

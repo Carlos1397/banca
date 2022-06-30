@@ -47,11 +47,6 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>com.banking</groupId>
-            <artifactId>banca</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
 	<build>
@@ -69,6 +64,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>springboot-mongo-docker</finalName>
 	</build>
 
 </project>
