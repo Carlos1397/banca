@@ -4,13 +4,17 @@ import com.banking.banca.model.document.Movement;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * interface MovementService.
+ */
 public interface MovementService {
-    Flux<Movement> getAll();
+  Flux<Movement> getAll();
 
-    Mono<Movement> save(Movement movement);
+  Mono<Movement> save(Movement movement);
 
-    Mono<Movement> update(String id, Movement movement);
+  Mono<Movement> update(String id, Movement movement);
 
-    Mono<Movement> findById(String id);
-    Mono<Void> delete(String id);
+  Mono<Movement> findById(String id);
+
+  Mono<Void> delete(String id);
 }

@@ -5,14 +5,17 @@ import com.banking.banca.model.document.Passive;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * interface AssetService.
+ */
 public interface AssetService {
-    Flux<Asset> getAll();
+  Flux<Asset> getAll();
 
-    Mono<Asset> save(Asset asset);
+  Mono<Asset> save(Asset asset);
 
-    Mono<Asset> update(String id, Asset asset);
+  Mono<Asset> update(String id, Asset asset);
 
-    Mono<Asset> findById(String id);
+  Mono<Asset> findById(String id);
 
-    Mono<Void> delete(String id);
+  Mono<Void> delete(String id);
 }

@@ -5,9 +5,12 @@ import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
+/**
+ * interface PassiveRepository.
+ */
 @Repository
-public interface PassiveRepository extends ReactiveMongoRepository<Passive,String> {
+public interface PassiveRepository extends ReactiveMongoRepository<Passive, String> {
 
-    Mono<Passive> findByTypeAccount(String account);
+  Mono<Passive> findByTypeAccount(String account);
 
 }

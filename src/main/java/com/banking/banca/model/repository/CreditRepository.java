@@ -4,6 +4,10 @@ import com.banking.banca.model.document.Credit;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 
+
+/**
+ * intergace CreditRepository.
+ */
 @Repository
-public interface CreditRepository extends ReactiveMongoRepository<Credit,String> {
+public interface CreditRepository extends ReactiveMongoRepository<Credit, String> {
 }

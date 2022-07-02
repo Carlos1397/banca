@@ -6,14 +6,19 @@ import com.banking.banca.model.document.Credit;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+
+/**
+ * interface CreditService.
+ */
 public interface CreditService {
-    Flux<Credit> getAll();
+  Flux<Credit> getAll();
 
-    Mono<Credit> save(Credit credit);
+  Mono<Credit> save(Credit credit);
 
-    Mono<Credit> update(String id, Credit credit);
+  Mono<Credit> update(String id, Credit credit);
 
-    Mono<Credit> findById(String id);
-    Mono<Void> delete(String id);
+  Mono<Credit> findById(String id);
+
+  Mono<Void> delete(String id);
 
 }

@@ -5,13 +5,17 @@ import com.banking.banca.model.document.Card;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * interface CardService.
+ */
 public interface CardService {
-    Flux<Card> getAll();
+  Flux<Card> getAll();
 
-    Mono<Card> save(Card card);
+  Mono<Card> save(Card card);
 
-    Mono<Card> update(String id, Card card);
+  Mono<Card> update(String id, Card card);
 
-    Mono<Card> findById(String id);
-    Mono<Void> delete(String id);
+  Mono<Card> findById(String id);
+
+  Mono<Void> delete(String id);
 }
