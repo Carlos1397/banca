@@ -4,3 +4,4 @@ spring:
       uri: mongodb://localhost:27017
       database: banca
       port: 27017
+      host: mongodb
