@@ -30,6 +30,7 @@ public class PassiveServiceImpl implements PassiveService {
 
   @Override
   public Mono<Passive> save(Passive passive) {
+
     Mono<Passive> passiveMono = null;
     if (clientService.findById(passive.getClient())
                      .block()

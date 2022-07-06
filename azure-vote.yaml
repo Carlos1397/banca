@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+        - name: mongo
+          image: mongo:5.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+    app: mongo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banca-service-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: banca-service-api
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: banca-service-api
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+        - name: banca-service-api
+          image: acrbanca.azurecr.io/banca-service-api:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 250m
+            limits:
+              cpu: 500m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: banca-service-api
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+  selector:
+    app: banca-service-api
