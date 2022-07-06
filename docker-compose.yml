@@ -1,14 +1,21 @@
 version: "3.8"
 services:
+  #service 1: definition of mongo database
   mongodb:
-    image: mongo:5.0
-    container_name: mongo-service
+    image: "mongo:5.0"
+    container_name: mongodb
+    restart: always
     ports:
       - 27017:27017
+  #service 2: definition of your spring-boot app
   banca-service:
-    image: springboot-mongodb:1.0
-    container_name: banca-service-api
+    image: banca-service-api
+    container_name: banca-service-back
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - 8080:8080
+    restart: always
     depends_on:
       - mongodb
