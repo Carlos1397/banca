@@ -70,7 +70,6 @@
 				<version>3.9.1.2184</version>
 			</plugin>
 		</plugins>
-		<finalName>banca-docker</finalName>
 	</build>
 
 </project>
