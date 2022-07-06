@@ -3,7 +3,7 @@ services:
   #service 1: definition of mongo database
   mongoDB:
     image: "mongo:5.0"
-    container_name: mongoDB-back
+    container_name: mongodb-back
     restart: always
     hostname: mongodb
     ports:
