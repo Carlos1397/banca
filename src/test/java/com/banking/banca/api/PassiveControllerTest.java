@@ -33,8 +33,8 @@ public class PassiveControllerTest {
                  .consumeWith(response ->
                      Assertions.assertNotNull(response.getResponseBody()))
                  .jsonPath("$.typeAccount").isEqualTo("SAVINGS")
-                 .jsonPath("$.balance").isEqualTo(500);
-
+                 .jsonPath("$.balance").isEqualTo(500)
+                 .jsonPath("$.limitMov").isEqualTo(5);
   }
 
 }
